@@ -1,0 +1,182 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/script.js"></script>
+	<meta charset="UTF-8">
+	<title>Mapa con un marcador</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.css">
+	<link rel="stylesheet" href="mapa.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.0/dist/leaflet.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="container-fluid">
+    <section class="marg font">
+      <!--Barra de Navegación-->
+      <div class="wrapper">
+        <nav id="sidebar">
+          <div class="sidebar-header">
+            <h3> LimaqIllaria </h3>
+          </div>
+          <ul class="list-unstyled components">
+            <li id="opcion1">
+              <a>Opcion1</a>
+            </li>
+            <li id="opcion2">
+              <a>Opcion2</a>
+            </li>
+            <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" id="opcion3">Opcion3</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                  <a  id="lima">Descubre negocios en Lima</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id="content">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <button type="button" id="sidebarCollapse" class="navbar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-align-justify"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#"> <i class="far fa-grin"></i> Administrador </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- Pantalla que se muestra al entrar-->
+          <section id="screens" class="jumbotron">
+            <div class="row">
+              <section id="contenedorInicio">
+                <div class="col-12 p-3">
+                  <h4 class="title">genera el cambio</h4>
+                </div>
+                <div id="demo" class="col-12 col-md-6"><span>
+                    <p class="size inline user p-3">Bienvenido</p>
+                  </span>
+                  <h4 class="inline">Empresa <br> activa</h4>
+                </div>
+                <div class="col-12 col-md-6">
+                  <h2 class="inline p-3 ">🌱</h2>
+                  <h2 class="inline">vuelvete ecoResponsable</h2>
+                </div>
+                <div class="col-12 col-md-3 pt-5">
+                  <h5 class="size per">100%</h5>
+                  <p>De empresas cubiertas</p>
+                </div>
+                <div class="col-12 col-md-3 pt-5">
+                  <h5 class="size per">¿tu empresa es ecoamigable </h5>
+                  <p>descubrelo en la opcion 1</p>
+                </div>
+                <div class="col-12 col-md-3 pt-5">
+                  <h5 class="size per">consigue Beneficios</h5>
+                  <p>descuentos </p>
+                </div>
+                <div class="col-12 col-md-3 pt-5">
+                  <h5 class="size per">Canjea tus beneficios</h5>
+                  <p>opcion 2</p>
+                </div>
+            </div>
+
+            <div class="hidden" id="mapaVista">
+
+                <div id="mapa"></div>
+     
+            </div>
+
+            <div class="hidden" id="contenedorInput">
+              <label>
+                ingresa tu codigo</span>
+              </label>
+              <input type="text" required>
+              <button id="reclamaBeneficio"> reclama tu beneficio</button>
+              <div id="beneficio"></div>
+            </div>
+
+            <div class="hidden" id="cuestionario">
+                    <article>
+                            <form role="form">
+                                    <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" class="form-control" id="name" />
+                                    <label for="apellidos">Apellidos</label>
+                                    <input type="text" class="form-control" id="apellidos" />
+                                    </div>
+                                    <label for="photo">Incluya una foto</label>
+                                    <div class="drag-drop">
+                                    <input type="file" multiple="multiple" id="photo" />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                    <button type="reset" class="btn btn-default">Cancelar</button>
+                                    </form>
+                        </article>
+            </div>
+
+
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+  </main>
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $(this).toggleClass('active');
+      });
+    });
+
+  </script>
+  
+  <script src="data.js"></script>
+  <script src="mapa.js"></script>
+ 
+  
+</body>
+
+</html>

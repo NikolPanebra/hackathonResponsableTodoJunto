@@ -13,7 +13,7 @@
 }
 
 .nav-bg {
-    background-color: #1ab188;
+    background-color: #99CC33;
     height: 100vh;
     width: 4.2rem;
     margin-left: -1rem;
@@ -32,7 +32,7 @@
 =======
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Thasadith', sans-serif;
     background: #fafafa;
 }
 
@@ -82,7 +82,7 @@ a, a:hover, a:focus {
 #sidebar .sidebar-header {
     padding: 20px;
     color: #000000;
-    background: #1ab188;
+    background: #99CC33;
 }
 
 #sidebar ul.components {
@@ -101,7 +101,7 @@ a, a:hover, a:focus {
     display: block;
 }
 #sidebar ul li a:hover {
-    color:  #1ab188;
+    color:  #99CC33;
     background: #282a27;
 }
 
@@ -214,7 +214,7 @@ ul.CTAs a {
 
 .user {
     font-size: 5rem;
-    color:  #1ab188;
+    color:  rgb(122, 163, 39);
 }
 
 .inline{
@@ -237,19 +237,19 @@ ul.CTAs a {
 .boldi {
    font-family: bitter;
    font-size: 1.3em;
-   color:  #1ab188;
+   color:  rgb(128, 175, 34);
 }
 
 .per {
     font-family: bitter;
    font-size: 1.8em;
-   color:  #1ab188;
+   color:  rgb(128, 175, 34);
 }
 
 .title {
     font-family: bitter;
    font-size: 1.3em;
-   color:  #1ab188;
+   color:  rgb(128, 175, 34);
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td, 
@@ -274,7 +274,7 @@ ul.CTAs a {
 }
 
 a {
-color: #00B7FF;
+color: rgb(128, 175, 34)
 }
 .card{
 top: 60%;
